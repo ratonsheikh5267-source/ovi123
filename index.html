@@ -19,16 +19,24 @@
     .navbar-brand { color:#fff !important; font-weight:700; }
     
     .hero {
-      background: url('ovi cover.png') no-repeat center/cover;
-      min-height:100vh;
-      display:flex; align-items:center; justify-content:center;
-      position:relative; color:#fff; text-align:center;
-      padding: 80px 10px 40px;
-    }
-    .hero::before {
-      content:""; position:absolute; inset:0;
-      background:rgba(0,0,0,0.5);
-    }
+  background: url('ovi cover.png') no-repeat center center;
+  background-size: contain; /* ছবিটা পুরোটা দেখাবে */
+  background-color: #000;   /* ফাঁকা জায়গায় কালো রঙ ভরবে */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 80px 10px 40px;
+}
+.hero::before {
+  content:""; position:absolute; inset:0;
+  background:rgba(0,0,0,0.5);
+}
+
+    
     .hero-content { position:relative; z-index:10; padding: 0 10px; }
     .hero img {
       width:150px; height:150px; border-radius:50%;
