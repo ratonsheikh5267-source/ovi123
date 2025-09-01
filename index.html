@@ -1,219 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ovi | Digital Marketer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ovi Growth Agency</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body { font-family: 'Poppins', sans-serif; margin:0; color:#333; background:#fff; }
-    .navbar { background:#0d6efd; }
-    .navbar .nav-link { color:#fff !important; margin-left:1rem; font-weight:500; }
-    .navbar-brand { color:#fff !important; font-weight:700; }
-    
-    /* HERO / BANNER */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      background-color: #007bff;
+    }
+    .navbar-brand {
+      color: #fff !important;
+      font-weight: bold;
+    }
     .hero {
-      background: url('ovi cover.png') no-repeat center center;
-      background-size: cover;
-      min-height: 100vh;
-      display:flex; align-items:center; justify-content:center;
-      position:relative; color:#fff; text-align:center;
+      position: relative;
+      text-align: center;
     }
-    .hero::before {
-      content:""; position:absolute; inset:0;
-      background:rgba(0,0,0,0.55);
+    .hero img.cover {
+      width: 100%;
+      max-height: 100vh;
+      object-fit: cover;
     }
-    .hero-content { position:relative; z-index:10; padding: 0 15px; }
-    .hero img {
-      width:130px; height:130px; border-radius:50%;
-      border:4px solid #fff; margin-bottom:1rem; object-fit:cover;
-      box-shadow:0 0 15px rgba(0,0,0,0.5);
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
     }
-    .hero h1 { font-size:2.2rem; font-weight:700; }
-    .hero p { font-size:1rem; margin:1rem 0; }
+    .hero-content img.profile {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin-bottom: 15px;
+    }
     .btn-cta {
-      background:#ffcc00; color:#111; padding:.7rem 2rem;
-      border-radius:30px; font-weight:600; transition:.3s;
-      text-decoration:none;
+      background-color: #ffc107;
+      color: #000;
+      padding: 10px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
     }
-    .btn-cta:hover { background:#fff; color:#0d6efd; }
-
-    section { padding:70px 0; }
-    .section-title {
-      text-align:center; font-size:2rem; margin-bottom:2.2rem; font-weight:700;
-      color:#0d6efd;
-    }
-
-    .service-item {
-      padding:2rem; background:#f8f9fa; border-radius:15px;
-      text-align:center; transition:.3s; border:1px solid #e0e0e0;
-    }
-    .service-item:hover { background:#fff; box-shadow:0 6px 18px rgba(0,0,0,.1); }
-    .service-item i { font-size:2.2rem; margin-bottom:1rem; color:#0d6efd; }
-
-    .pricing-card {
-      background:#fff; border-radius:15px; border:1px solid #e0e0e0;
-      padding:2rem; text-align:center; transition:.3s;
-    }
-    .pricing-card:hover { box-shadow:0 6px 18px rgba(0,0,0,0.1); transform:translateY(-5px); }
-    .pricing-card h4 { color:#0d6efd; font-weight:700; }
-    .pricing-card h2 { font-size:2rem; margin:1rem 0; }
-    .pricing-card ul { list-style:none; padding:0; }
-    .pricing-card ul li { margin:0.5rem 0; }
-
-    footer {
-      background:#0d6efd; color:#fff; padding:40px 0; text-align:center;
-    }
-    footer a { color:#fff; margin:0 .5rem; font-size:1.2rem; text-decoration:none; }
-    footer a:hover { color:#ffcc00; }
-
-    /* Responsive Fix */
-    @media (max-width:768px) {
-      .hero { min-height: 100vh; background-position:center top; }
-      .hero h1 { font-size:1.6rem; }
-      .hero p { font-size:0.9rem; }
-      .hero img { width:110px; height:110px; }
+    .btn-cta:hover {
+      background-color: #e0a800;
+      color: #fff;
     }
   </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">Ovi Growth Agency</a>
-    <button class="navbar-toggler bg-light" data-bs-toggle="collapse" data-bs-target="#nav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="nav">
-      <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" href="#services">Services</a>
-      <a class="nav-link" href="#pricing">Pricing</a>
-      <a class="nav-link" href="#contact">Contact</a>
-    </div>
-  </div>
-</nav>
-
-<!-- Hero -->
-<section class="hero">
-  <div class="hero-content">
-    <img src="ovi profile.jpg" alt="Profile">
-    <h1>Ovi – Digital Marketing Expert</h1>
-    <p>Facebook Ads & Social Media Growth Specialist</p>
-    <a href="#contact" class="btn-cta">Work With Me</a>
-  </div>
-</section>
-
-<!-- About -->
-<section id="about">
-  <div class="container">
-    <div class="section-title">About Me</div>
-    <p class="text-center mx-auto" style="max-width:700px;">
-      Hi! I'm Ovi, a professional digital marketer specializing in Facebook Page Setup,
-      Ads Campaigns, and Social Media Management. My goal is to help brands grow faster online.
-    </p>
-  </div>
-</section>
-
-<!-- Services -->
-<section id="services" style="background:#f8f9ff;">
-  <div class="container">
-    <div class="section-title">Services</div>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="service-item">
-          <i class="fas fa-flag"></i>
-          <h5>Facebook Page Setup</h5>
-          <p>Professional page creation and optimization for your business.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="service-item">
-          <i class="fas fa-bullhorn"></i>
-          <h5>Facebook Ads</h5>
-          <p>Targeted ad campaigns to boost sales and brand awareness.</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="service-item">
-          <i class="fas fa-share-alt"></i>
-          <h5>Social Media Management</h5>
-          <p>Engaging content & strategy to grow your online community.</p>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">Ovi Growth Agency</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#pricing">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- Pricing -->
-<section id="pricing">
-  <div class="container">
-    <div class="section-title">Pricing Plans</div>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="pricing-card">
-          <h4>Basic</h4>
-          <h2>$20</h2>
-          <ul>
-            <li>Page Setup</li>
-            <li>1 Ad Campaign</li>
-            <li>Email Support</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary">Choose</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="pricing-card">
-          <h4>Premium</h4>
-          <h2>$50</h2>
-          <ul>
-            <li>Page Setup</li>
-            <li>3 Ad Campaigns</li>
-            <li>Priority Support</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary">Choose</a>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="pricing-card">
-          <h4>Advance</h4>
-          <h2>$100</h2>
-          <ul>
-            <li>Page Setup</li>
-            <li>Unlimited Ads</li>
-            <li>24/7 Support</li>
-          </ul>
-          <a href="#contact" class="btn btn-primary">Choose</a>
-        </div>
+  <!-- Hero -->
+  <section class="hero">
+    <img src="ovi cover.png" alt="Cover" class="cover">
+    <div class="hero-content">
+      <img src="ovi profile.jpg" alt="Profile" class="profile">
+      <h1>Ovi – Digital Marketing Expert</h1>
+      <p>Facebook Ads & Social Media Growth Specialist</p>
+      <a href="#contact" class="btn-cta">Work With Me</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-5 text-center">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>I help businesses grow with effective Facebook Ads and Social Media Marketing strategies.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-5 bg-light text-center">
+    <div class="container">
+      <h2>Services</h2>
+      <div class="row">
+        <div class="col-md-4"><h5>Facebook Page Setup</h5></div>
+        <div class="col-md-4"><h5>Facebook Ads Management</h5></div>
+        <div class="col-md-4"><h5>Social Media Management</h5></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Contact -->
-<section id="contact">
-  <div class="container">
-    <div class="section-title">Contact</div>
-    <p class="text-center">Get in touch for your next project.</p>
-    <div class="text-center mt-4">
-      <p><i class="fas fa-envelope"></i> kaziadnanovi@gmail.com</p>
-      <p><i class="fas fa-phone"></i> 01822950527</p>
-      <a href="https://www.facebook.com/ovigrowthagency" target="_blank" class="btn btn-primary mt-2">
-        <i class="fab fa-facebook"></i> Facebook Page
-      </a>
+  <!-- Pricing -->
+  <section id="pricing" class="py-5 text-center">
+    <div class="container">
+      <h2>Pricing</h2>
+      <div class="row">
+        <div class="col-md-4"><div class="card p-3"><h5>Basic Plan</h5><p>$20</p></div></div>
+        <div class="col-md-4"><div class="card p-3"><h5>Premium Plan</h5><p>$50</p></div></div>
+        <div class="col-md-4"><div class="card p-3"><h5>Advance Plan</h5><p>$100</p></div></div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer>
-  <p>© 2025 Ovi Growth Agency | All Rights Reserved</p>
-  <div>
-    <a href="https://www.facebook.com/ovigrowthagency" target="_blank"><i class="fab fa-facebook"></i></a>
-  </div>
-</footer>
+  <!-- Contact -->
+  <section id="contact" class="py-5 bg-light text-center">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>📞 01822950527</p>
+      <p>✉️ kaziadnanovi@gmail.com</p>
+      <a href="https://www.facebook.com/ovigrowthagency" target="_blank" class="btn btn-primary">Facebook Page</a>
+    </div>
+  </section>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <footer class="py-3 bg-dark text-white text-center">
+    <p>© 2025 Ovi Growth Agency</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
