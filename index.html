@@ -14,41 +14,70 @@
 
     /* Hero Section */
     .hero {
-      background: url('White and Blue Modern Email Marketing Agency Facebook Cover (1).png') no-repeat center center;
-      background-size: cover;
-      background-color:#fff; /* fallback color */
-      height:100vh; 
-      display:flex; 
-      align-items:center; 
-      justify-content:center;
-      position:relative; 
-      color:#fff; 
-      text-align:center;
+      background: url('ovi.png') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
     }
     .hero::before {
-      content:""; 
-      position:absolute; 
+      content:"";
+      position:absolute;
       inset:0;
-      background:rgba(0,0,0,0.4); /* overlay for text visibility */
+      background:rgba(0,0,0,0.4);
+      z-index:1;
     }
-    .hero-content { 
-      position:relative; 
-      z-index:10; 
-      padding: 0 10px; 
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      padding: 20px;
+      animation: fadeUp 1.8s ease forwards;
+      opacity: 0;
     }
-    .hero img {
-      width:150px; height:150px; border-radius:50%;
-      border:4px solid #fff; margin-bottom:1rem; object-fit:cover;
-      box-shadow:0 0 15px rgba(0,0,0,0.5);
+    .hero-content h1 { font-size:2.8rem; font-weight:700; margin-bottom:15px; }
+    .hero-content p { font-size:1.2rem; margin-bottom:25px; }
+
+    @keyframes fadeUp {
+      0% { transform: translateY(50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
     }
-    .hero h1 { font-size:2.5rem; font-weight:700; }
-    .hero p { font-size:1.1rem; margin:1rem 0; }
+
+    /* Floating Shapes */
+    .floating-circle {
+      position: absolute;
+      width: 80px; height: 80px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 50%;
+      top: 20%; left: 15%;
+      animation: float 6s ease-in-out infinite;
+      z-index: 0;
+    }
+    .floating-circle.delay {
+      top: 60%; left: 70%;
+      animation-delay: 3s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-30px) translateX(20px); }
+    }
+
+    /* Button Animation */
     .btn-cta {
-      background:#ffcc00; color:#111; padding:.8rem 2.2rem;
-      border-radius:30px; font-weight:600; transition:.3s;
-      text-decoration:none;
+      background:#ffcc00; color:#111;
+      padding:.8rem 2.2rem; border-radius:30px;
+      font-weight:600; transition:.3s;
+      text-decoration:none; animation: pulse 2s infinite;
     }
     .btn-cta:hover { background:#fff; color:#0d6efd; }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,204,0,0.7); }
+      70% { box-shadow: 0 0 0 20px rgba(255,204,0,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,204,0,0); }
+    }
 
     section { padding:70px 0; }
     .section-title {
@@ -57,7 +86,6 @@
     }
 
     /* Services */
-    #services { background:#eef6ff; }
     .service-item {
       padding:2rem; background:#f8f9fa; border-radius:15px;
       text-align:center; transition:.3s; border:1px solid #e0e0e0;
@@ -77,18 +105,14 @@
     .pricing-card ul li { margin:0.5rem 0; }
 
     /* Footer */
-    footer {
-      background:#0d6efd; color:#fff; padding:40px 0; text-align:center;
-    }
+    footer { background:#0d6efd; color:#fff; padding:40px 0; text-align:center; }
     footer a { color:#fff; margin:0 .5rem; font-size:1.2rem; text-decoration:none; }
     footer a:hover { color:#ffcc00; }
 
-    /* Responsive Fix */
+    /* Responsive */
     @media (max-width:768px) {
-      .hero { height: 90vh; }
-      .hero h1 { font-size:2rem; }
-      .hero p { font-size:1rem; }
-      .hero img { width:120px; height:120px; }
+      .hero-content h1 { font-size:2rem; }
+      .hero-content p { font-size:1rem; }
     }
   </style>
 </head>
@@ -112,8 +136,9 @@
 
 <!-- Hero -->
 <section class="hero">
+  <div class="floating-circle"></div>
+  <div class="floating-circle delay"></div>
   <div class="hero-content">
-    <img src="ovi profile.jpg" alt="Profile">
     <h1>Ovi – Digital Marketing Expert</h1>
     <p>Facebook Ads & Social Media Growth Specialist</p>
     <a href="#contact" class="btn-cta">Work With Me</a>
@@ -132,7 +157,7 @@
 </section>
 
 <!-- Services -->
-<section id="services">
+<section id="services" style="background:#f8f9ff;">
   <div class="container">
     <div class="section-title">Services</div>
     <div class="row g-4">
