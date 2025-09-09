@@ -5,18 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Responsive Hero Website</title>
   <style>
-    /* Basic reset */
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:#111}
 
-    /* Page layout */
     .site{
       min-height:100%;
       display:flex;
       flex-direction:column;
     }
 
-    /* NAV */
     .nav{
       position:fixed;left:0;right:0;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0));backdrop-filter:blur(6px);
     }
@@ -26,38 +23,32 @@
     .menu a:hover{background:rgba(0,0,0,0.06)}
     .hamburger{display:none;cursor:pointer;padding:8px;border-radius:8px}
 
-    /* HERO with background image */
     .hero{
-      height:75vh;
-      min-height:420px;
+      height:90vh;
+      min-height:600px;
       display:grid;
       place-items:center;
       position:relative;
       color:#fff;
       text-align:center;
       overflow:hidden;
-      /* default background for larger screens */
-      background-image: url('ovi.png');
+      background-image: url(ovi.png);
       background-size:cover;
       background-position:center center;
     }
 
-    /* dark overlay to keep text readable */
     .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.45));}
-    .hero-inner{position:relative;z-index:2;max-width:920px;padding:32px}
+    .hero-inner{position:relative;z-index:2;max-width:920px;padding:80px 32px}  /* boro frame effect */
     .hero h1{font-size:clamp(28px,5vw,48px);line-height:1.02;margin-bottom:12px}
     .hero p{font-size:clamp(14px,2.6vw,18px);opacity:0.95;margin-bottom:18px}
     .btn{display:inline-block;padding:12px 20px;border-radius:12px;background:linear-gradient(90deg,#ff7a18,#af002d);color:#fff;text-decoration:none;font-weight:600}
 
-    /* CONTENT */
     .content{padding:48px 20px 120px}
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto}
     .card{padding:22px;border-radius:12px;box-shadow:0 6px 20px rgba(10,10,10,0.06);background:#fff}
 
-    /* Footer */
     footer{padding:28px 20px;text-align:center;background:#fafafa;margin-top:auto}
 
-    /* Responsive tweaks for smaller screens (phone) */
     @media (max-width:800px){
       .hero{height:100vh;min-height:600px}
       .nav{padding:12px 14px}
@@ -66,22 +57,19 @@
       .menu{display:none}
     }
 
-    /* Special handling for small phones: make background image 'contain' and pull it to top */
     @media (max-width:420px){
       .hero{
-        /* keep the image visible but 'contained' so it fits without cropping */
-        background-size:contain;
+        background-size:cover;
+        background-position:center;
         background-repeat:no-repeat;
-        background-position:top center; /* image pulled to the top */
-        height:100vh; /* take full viewport height on phone */
-        padding-top:74px; /* room for fixed nav */
+        height:100vh;
+        padding-top:74px;
       }
       .hero::before{background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.6));}
-      .hero-inner{padding-top:120px}
+      .hero-inner{padding:60px 20px}  /* mobile-friendly padding */
       .cards{grid-template-columns:1fr}
     }
 
-    /* mobile menu visible class */
     .menu.open{display:flex;flex-direction:column;position:fixed;top:64px;right:12px;background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 22px rgba(0,0,0,0.12);z-index:60}
 
   </style>
@@ -153,19 +141,16 @@
   </div>
 
   <script>
-    // Mobile menu toggle
     const hamburger = document.getElementById('hamburger');
     const menu = document.getElementById('menu');
     hamburger.addEventListener('click', () => {
       menu.classList.toggle('open');
     });
 
-    // Close mobile menu on link click
     document.querySelectorAll('#menu a').forEach(a => a.addEventListener('click', ()=>{
       if(menu.classList.contains('open')) menu.classList.remove('open');
     }));
 
-    // Optional: simple parallax effect for desktop
     window.addEventListener('scroll', () => {
       const hero = document.querySelector('.hero');
       if(window.innerWidth > 800){
