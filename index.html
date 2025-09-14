@@ -39,7 +39,6 @@ nav a:hover { color: #ff7b00; }
   color: #fff;
   overflow: hidden;
 
-  /* Laptop/Desktop Background */
   background-image: url('https://images.unsplash.com/photo-1559526324-593bc073d938?crop=entropy&cs=tinysrgb&fit=max&w=1600');
   background-size: cover;
   background-position: center;
@@ -49,7 +48,7 @@ nav a:hover { color: #ff7b00; }
 .hero .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.3); /* less opacity for clear image */
+  background: rgba(0,0,0,0.3);
   z-index: 1;
 }
 
@@ -103,21 +102,15 @@ nav a:hover { color: #ff7b00; }
 }
 @keyframes gradientMove { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
 
-/* Mobile/Phone Background */
+/* Mobile Background */
 @media (max-width: 768px) {
   .hero {
     background-image: url('https://images.unsplash.com/photo-1605902711622-cfb43c443f01?crop=entropy&cs=tinysrgb&fit=max&w=800');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     min-height: 100vh;
   }
   .hero-content h1 { font-size: 2rem; }
   .hero-content p { font-size: 1rem; }
-  .hero-logo img {
-    width: 40%;
-    max-width: 120px;
-  }
+  .hero-logo img { width: 40%; max-width: 120px; }
   nav { right: 20px; top: 15px; }
 }
 
@@ -251,6 +244,7 @@ footer { text-align:center; padding:15px; background:#111; color:#bbb; }
   <p>🌐 Facebook: <a href="#">https://www.facebook.com/ovigrowthagency</a></p>
 </section>
 
+<!-- Footer -->
 <footer>
   <p>© 2025 Ovi Growth Agency. All rights reserved.</p>
 </footer>
