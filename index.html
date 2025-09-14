@@ -35,9 +35,14 @@ nav a:hover { color: #ff7b00; }
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: url('https://images.unsplash.com/photo-1559526324-593bc073d938?crop=entropy&cs=tinysrgb&fit=max&w=1600') center/cover no-repeat;
-  overflow: hidden;
   color: #fff;
+  overflow: hidden;
+
+  /* Desktop background */
+  background-image: url('https://images.unsplash.com/photo-1559526324-593bc073d938?crop=entropy&cs=tinysrgb&fit=max&w=1600');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero .overlay {
@@ -54,15 +59,15 @@ nav a:hover { color: #ff7b00; }
   padding: 20px;
 }
 
-/* Responsive Logo as Circle */
+/* Circular Logo */
 .hero-logo img {
-  width: 25%;          /* Desktop: 25% of container */
-  max-width: 150px;    /* Maximum size */
-  height: auto;        /* Maintain aspect ratio */
+  width: 25%;
+  max-width: 150px;
+  height: auto;
   margin-bottom: 20px;
-  border-radius: 50%;  /* Circle shape */
-  border: 3px solid #fff; /* Optional border */
-  object-fit: cover;   /* Maintain proper fit inside circle */
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
 }
 
 /* Hero Text */
@@ -99,16 +104,24 @@ nav a:hover { color: #ff7b00; }
 /* Mobile Styles */
 @media (max-width: 768px) {
   .hero {
-    background: url('https://images.unsplash.com/photo-1605902711622-cfb43c443f01?crop=entropy&cs=tinysrgb&fit=max&w=800') center/cover no-repeat;
+    background-image: url('https://images.unsplash.com/photo-1605902711622-cfb43c443f01?crop=entropy&cs=tinysrgb&fit=max&w=800');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .hero-content h1 { font-size: 2rem; }
   .hero-content p { font-size: 1rem; }
   .hero-logo img {
-    width: 40%;       /* Mobile: slightly bigger relative to screen */
+    width: 40%;
     max-width: 120px;
   }
   nav { right: 20px; top: 15px; }
 }
+
+/* About Section */
+#about-section { padding:80px 10%; text-align:center; background:#fff; color:#333; }
+#about-section h2 { margin-bottom:30px; font-size:2.5rem; text-decoration:underline; }
+#about-section p { font-size:1.1rem; max-width:800px; margin:0 auto; line-height:1.6; }
 
 /* Services Section */
 .services { padding:80px 10%; background:linear-gradient(135deg, #5f72ff, #ff5faf); color:#fff; }
@@ -167,12 +180,10 @@ footer { text-align:center; padding:15px; background:#111; color:#bbb; }
 </header>
 
 <!-- About Section -->
-<section id="about-section" class="services">
+<section id="about-section">
   <h2>About Us</h2>
-  <div style="max-width:800px; margin:0 auto; text-align:center; font-size:1.1rem;">
-    <p>Ovi Growth Agency is a full-service digital marketing agency that helps businesses increase their online presence, run high-converting ad campaigns, and grow their social media audience effectively.</p>
-    <p>Contact us to take your brand to the next level!</p>
-  </div>
+  <p>Ovi Growth Agency is a full-service digital marketing agency that helps businesses increase their online presence, run high-converting ad campaigns, and grow their social media audience effectively.</p>
+  <p>Contact us to take your brand to the next level!</p>
 </section>
 
 <!-- Services Section -->
